@@ -83,5 +83,11 @@
         "value": "0xa511088cc13a632a5e8f9937028a77ae271832465e067360dd13f548fe934d1a"
       }
     ]
-  }
+  },
+  "variables": [
+    {
+      "name": "positions",
+      "path": "positions"
+    }
+  ]
 }

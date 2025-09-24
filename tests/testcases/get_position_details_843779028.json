@@ -4,7 +4,8 @@
     "operationId": "positions.getPosition",
     "tags": [
       "positions"
-    ]
+    ],
+    "loopSource": "{{positions}}"
   },
   "validation": {
     "assertions": [
@@ -33,18 +34,18 @@
     "expectedBody": {
       "content": {
         "position": {
-          "id": "0x14e4a52cc36e996d820aa17be3c41f9cbbe2540df46bc1675b607c4481aab0b6",
-          "strategyId": "0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368",
+          "id": "{{positions.$.id}}",
+          "strategyId": "{{positions.$.strategyId}}",
           "type": "PositionV1",
           "principal": [
             {
-              "coinType": "0x2::sui::SUI",
-              "amount": "1000000"
+              "coinType": "{{positions.$.principal.0.coinType}}",
+              "amount": "{{positions.$.principal.0.amount}}"
             }
           ],
           "pendingRewards": [
             {
-              "coinType": "0x2::sui::SUI",
+              "coinType": "{{positions.$.pendingRewards.0.coinType}}",
               "amount": "0"
             }
           ],
@@ -55,12 +56,12 @@
     }
   },
   "request": {
-    "url": "https://api-staging.alphalend.xyz/slush/v1/positions/0x14e4a52cc36e996d820aa17be3c41f9cbbe2540df46bc1675b607c4481aab0b6",
+    "url": "https://api-staging.alphalend.xyz/slush/v1/positions/{{positions.$.id}}",
     "method": "GET",
     "queryParams": [
       {
         "name": "positionid",
-        "value": "0x14e4a52cc36e996d820aa17be3c41f9cbbe2540df46bc1675b607c4481aab0b6"
+        "value": "{{positions.$.id}}"
       }
     ]
   },
