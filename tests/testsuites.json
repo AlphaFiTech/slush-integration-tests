@@ -1,10 +1,5 @@
 [
   {
-    "name": "Test Suite 1",
-    "description": "",
-    "testCaseIds": []
-  },
-  {
     "name": "strategies",
     "description": "AlphaLend markets exposed as investment strategies",
     "testCaseIds": [
