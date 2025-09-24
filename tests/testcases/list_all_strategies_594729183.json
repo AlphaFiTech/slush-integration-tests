@@ -36,15 +36,15 @@
       "content": {
         "strategies": [
           {
-            "id": "0x2028ce51704ea9e945dd4eb216b5e5e998eea04f0e8f9f24be099681e7e58bb1",
+            "id": "0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368",
             "type": "StrategyV1",
             "strategyType": "LENDING",
             "coinTypes": [
-              "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC"
+              "0x2::sui::SUI"
             ],
             "minDeposit": [
               {
-                "coinType": "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC",
+                "coinType": "0x2::sui::SUI",
                 "amount": "0"
               }
             ],
@@ -63,15 +63,15 @@
             }
           },
           {
-            "id": "0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368",
+            "id": "0x2028ce51704ea9e945dd4eb216b5e5e998eea04f0e8f9f24be099681e7e58bb1",
             "type": "StrategyV1",
             "strategyType": "LENDING",
             "coinTypes": [
-              "0x2::sui::SUI"
+              "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC"
             ],
             "minDeposit": [
               {
-                "coinType": "0x2::sui::SUI",
+                "coinType": "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC",
                 "amount": "0"
               }
             ],
@@ -101,7 +101,7 @@
   "variables": [
     {
       "name": "strategies",
-      "path": ""
+      "path": "strategies"
     }
   ]
 }

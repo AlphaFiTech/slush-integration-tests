@@ -4,7 +4,8 @@
     "operationId": "strategies.getStrategy",
     "tags": [
       "strategies"
-    ]
+    ],
+    "loopSource": "{{strategies}}"
   },
   "validation": {
     "assertions": [
@@ -29,15 +30,15 @@
     "expectedBody": {
       "content": {
         "strategy": {
-          "id": "0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368",
+          "id": "{{strategies.$.id}}",
           "type": "StrategyV1",
           "strategyType": "LENDING",
           "coinTypes": [
-            "0x2::sui::SUI"
+            "{{strategies.$.coinTypes[0]}}"
           ],
           "minDeposit": [
             {
-              "coinType": "0x2::sui::SUI",
+              "coinType": "{{strategies.$.minDeposit.0.coinType}}",
               "amount": "{{*}}"
             }
           ],
@@ -60,12 +61,12 @@
     }
   },
   "request": {
-    "url": "https://{{site}}v1/strategies/0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368",
+    "url": "https://{{site}}v1/strategies/{{strategies.$.id}}",
     "method": "GET",
     "queryParams": [
       {
         "name": "strategyId",
-        "value": "0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368"
+        "value": "{{strategies.$.id}}"
       }
     ]
   }
