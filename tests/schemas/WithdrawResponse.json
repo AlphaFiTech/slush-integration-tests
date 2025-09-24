@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "required": [
+    "bytes",
+    "principal",
+    "rewards"
+  ],
+  "properties": {
+    "bytes": {
+      "$ref": "#/components/schemas/Bytes",
+      "description": "Transaction bytes for signing"
+    },
+    "principal": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CoinValue"
+      },
+      "description": "Principal amounts being withdrawn"
+    },
+    "rewards": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CoinValue"
+      },
+      "description": "Reward amounts being withdrawn"
+    },
+    "fees": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CoinValue"
+      },
+      "description": "Transaction fees"
+    }
+  },
+  "additionalProperties": false,
+  "version": "openapi3"
+}

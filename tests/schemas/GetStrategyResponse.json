@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "required": [
+    "strategy"
+  ],
+  "properties": {
+    "strategy": {
+      "$ref": "#/components/schemas/Strategy"
+    }
+  },
+  "additionalProperties": false,
+  "version": "openapi3"
+}

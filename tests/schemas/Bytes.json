@@ -1,0 +1,5 @@
+{
+  "type": "string",
+  "description": "a string to be decoded into a Uint8Array",
+  "version": "openapi3"
+}

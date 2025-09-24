@@ -1,0 +1,87 @@
+{
+  "details": {
+    "summary": "List user positions",
+    "operationId": "positions.listPositions",
+    "tags": [
+      "positions"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/components/schemas/ListPositionsResponse"
+      },
+      "type": "json"
+    },
+    "expectedBody": {
+      "content": {
+        "positions": [
+          {
+            "id": "0x14e4a52cc36e996d820aa17be3c41f9cbbe2540df46bc1675b607c4481aab0b6",
+            "strategyId": "0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368",
+            "type": "PositionV1",
+            "principal": [
+              {
+                "coinType": "0x2::sui::SUI",
+                "amount": "1000000"
+              }
+            ],
+            "pendingRewards": [
+              {
+                "coinType": "0x2::sui::SUI",
+                "amount": "0"
+              }
+            ],
+            "url": "url"
+          },
+          {
+            "id": "0x17c761b5bb8544aea47b326f62924b8d865b79cdd1ed293a1bb9a936f49e55c0",
+            "strategyId": "0x2028ce51704ea9e945dd4eb216b5e5e998eea04f0e8f9f24be099681e7e58bb1",
+            "type": "PositionV1",
+            "principal": [
+              {
+                "coinType": "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC",
+                "amount": "10000"
+              }
+            ],
+            "pendingRewards": [
+              {
+                "coinType": "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC",
+                "amount": "0"
+              }
+            ],
+            "url": "url"
+          }
+        ]
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "https://{{site}}v1/positions",
+    "method": "GET",
+    "queryParams": [
+      {
+        "name": "address",
+        "value": "0xa511088cc13a632a5e8f9937028a77ae271832465e067360dd13f548fe934d1a"
+      }
+    ]
+  }
+}

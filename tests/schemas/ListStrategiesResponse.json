@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "required": [
+    "strategies"
+  ],
+  "properties": {
+    "strategies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Strategy"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "version": "openapi3"
+}

@@ -1,0 +1,61 @@
+{
+  "details": {
+    "summary": "Create deposit transaction",
+    "operationId": "transactions.createDeposit",
+    "tags": [
+      "transactions"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Validator",
+        "expectedValue": ""
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Schema Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/components/schemas/DepositResponse"
+      },
+      "type": "json"
+    },
+    "expectedBody": {
+      "content": {
+        "bytes": "{{*}}",
+        "netDeposit": {
+          "coinType": "0x2::sui::SUI",
+          "amount": "1"
+        }
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "https://api-staging.alphalend.xyz/slush/v1/deposit",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "content": {
+        "strategyId": "0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368",
+        "senderAddress": "0x396c8d5f9560f2ffa5d67dcdf3f458ee654ad3e3e08d4eb6ff50e7ddf66a82e5",
+        "coinType": "0x2::sui::SUI",
+        "nativeAmount": "1"
+      },
+      "type": "json"
+    }
+  }
+}

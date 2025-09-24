@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "required": [
+    "strategyId",
+    "senderAddress",
+    "coinType",
+    "nativeAmount"
+  ],
+  "properties": {
+    "strategyId": {
+      "type": "string",
+      "description": "Target strategy identifier"
+    },
+    "senderAddress": {
+      "type": "string",
+      "description": "Sender's wallet address"
+    },
+    "coinType": {
+      "type": "string",
+      "description": "Coin type to deposit. May be a base asset or a supported zap-in asset."
+    },
+    "nativeAmount": {
+      "type": "string",
+      "description": "Amount to deposit in native units"
+    }
+  },
+  "additionalProperties": false,
+  "version": "openapi3"
+}

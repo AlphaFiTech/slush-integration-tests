@@ -1,0 +1,6 @@
+{
+  "type": "integer",
+  "description": "an integer",
+  "title": "int",
+  "version": "openapi3"
+}

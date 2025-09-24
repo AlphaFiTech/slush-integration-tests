@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "strategyId",
+    "type",
+    "principal",
+    "pendingRewards",
+    "url"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Protocol's canonical stable identifier (e.g., object id, Sui type tag) for the position."
+    },
+    "strategyId": {
+      "type": "string",
+      "description": "Identifier of the associated strategy"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "PositionV1"
+      ],
+      "description": "Literal tag used to identify the Position schema"
+    },
+    "principal": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CoinValue"
+      },
+      "description": "Principal amounts per coin type"
+    },
+    "pendingRewards": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CoinValue"
+      },
+      "description": "Unclaimed rewards per coin type. If not applicable for a given position, e.g. auto-compounding rewards, return an empty array."
+    },
+    "totalRewards": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CoinValue"
+      },
+      "description": "Total rewards (pending + compounded) per coin type"
+    },
+    "url": {
+      "$ref": "#/components/schemas/URL"
+    }
+  },
+  "additionalProperties": false,
+  "version": "openapi3"
+}

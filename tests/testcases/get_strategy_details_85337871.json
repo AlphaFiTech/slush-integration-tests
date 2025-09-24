@@ -1,0 +1,72 @@
+{
+  "details": {
+    "summary": "Get strategy details",
+    "operationId": "strategies.getStrategy",
+    "tags": [
+      "strategies"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/components/schemas/GetStrategyResponse"
+      },
+      "type": "json"
+    },
+    "expectedBody": {
+      "content": {
+        "strategy": {
+          "id": "0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368",
+          "type": "StrategyV1",
+          "strategyType": "LENDING",
+          "coinTypes": [
+            "0x2::sui::SUI"
+          ],
+          "minDeposit": [
+            {
+              "coinType": "0x2::sui::SUI",
+              "amount": "{{*}}"
+            }
+          ],
+          "apy": {
+            "current": "{{*}}",
+            "avg24h": "{{*}}",
+            "avg7d": "{{*}}",
+            "avg30d": "{{*}}"
+          },
+          "depositorsCount": "{{*}}",
+          "tvlUsd": "{{*}}",
+          "volume24hUsd": "{{*}}",
+          "fees": {
+            "depositBps": "0",
+            "withdrawBps": "0"
+          }
+        }
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "https://{{site}}v1/strategies/0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368",
+    "method": "GET",
+    "queryParams": [
+      {
+        "name": "strategyId",
+        "value": "0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368"
+      }
+    ]
+  }
+}

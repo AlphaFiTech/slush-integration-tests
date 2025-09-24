@@ -1,0 +1,5 @@
+{
+  "type": "string",
+  "description": "a string to be decoded into a URL",
+  "version": "openapi3"
+}

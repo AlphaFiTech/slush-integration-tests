@@ -1,0 +1,6 @@
+{
+  "type": "string",
+  "description": "Sui coin type (e.g. 0x2::sui::SUI)",
+  "pattern": "^(0x|0X)[a-fA-F0-9]{1,64}::.+::.+$",
+  "version": "openapi3"
+}

@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": [
+    "coinType",
+    "amount"
+  ],
+  "properties": {
+    "coinType": {
+      "$ref": "#/components/schemas/CoinType"
+    },
+    "amount": {
+      "$ref": "#/components/schemas/BigInt"
+    },
+    "valueUsd": {
+      "type": "number",
+      "description": "Value in USD (optional)"
+    }
+  },
+  "additionalProperties": false,
+  "version": "openapi3"
+}

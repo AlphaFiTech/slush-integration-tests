@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "required": [
+    "bytes",
+    "netDeposit"
+  ],
+  "properties": {
+    "bytes": {
+      "$ref": "#/components/schemas/Bytes",
+      "description": "Transaction bytes for signing"
+    },
+    "fees": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CoinValue"
+      },
+      "description": "Transaction fees"
+    },
+    "netDeposit": {
+      "$ref": "#/components/schemas/CoinValue"
+    }
+  },
+  "additionalProperties": false,
+  "version": "openapi3"
+}

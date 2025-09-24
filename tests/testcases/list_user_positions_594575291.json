@@ -1,0 +1,50 @@
+{
+  "details": {
+    "summary": "List user positions for new user",
+    "operationId": "positions.listPositions",
+    "tags": [
+      "positions"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/components/schemas/ListPositionsResponse"
+      },
+      "type": "json"
+    },
+    "expectedBody": {
+      "content": {
+        "positions": []
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "https://api-staging.alphalend.xyz/slush/v1/positions",
+    "method": "GET",
+    "queryParams": [
+      {
+        "name": "address",
+        "value": "0x396c8d5f9560f2ffa5d67dcdf3f458ee654ad3e3e08d4eb6ff50e7ddf66a82e5"
+      }
+    ]
+  }
+}
