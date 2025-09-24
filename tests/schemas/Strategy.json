@@ -1,0 +1,111 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "strategyType",
+    "coinTypes",
+    "minDeposit",
+    "apy",
+    "depositorsCount",
+    "tvlUsd",
+    "volume24hUsd",
+    "fees"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique immutable identifier for the strategy"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "StrategyV1"
+      ],
+      "description": "Literal tag used to identify the Strategy schema"
+    },
+    "strategyType": {
+      "type": "string",
+      "enum": [
+        "VAULT",
+        "LENDING"
+      ],
+      "description": "High-level strategy category"
+    },
+    "coinTypes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CoinType"
+      },
+      "description": "Input coin types supported by this strategy"
+    },
+    "minDeposit": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CoinValue"
+      },
+      "description": "Minimum deposit amounts per coin type"
+    },
+    "apy": {
+      "type": "object",
+      "required": [
+        "current",
+        "avg24h",
+        "avg7d",
+        "avg30d"
+      ],
+      "properties": {
+        "current": {
+          "type": "number",
+          "description": "Current APY as decimal (e.g., 0.05 for 5%)"
+        },
+        "avg24h": {
+          "type": "number",
+          "description": "Trailing 24h APY as decimal"
+        },
+        "avg7d": {
+          "type": "number",
+          "description": "Trailing 7d APY as decimal"
+        },
+        "avg30d": {
+          "type": "number",
+          "description": "Trailing 30d APY as decimal"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Current / trailing-window total APY (including incentives)"
+    },
+    "depositorsCount": {
+      "$ref": "#/components/schemas/Int",
+      "description": "Number of depositors in the strategy",
+      "title": "greaterThanOrEqualTo(0)",
+      "minimum": 0
+    },
+    "tvlUsd": {
+      "type": "number",
+      "description": "Total Value Locked in USD"
+    },
+    "volume24hUsd": {
+      "type": "number",
+      "description": "24-hour volume in USD"
+    },
+    "fees": {
+      "type": "object",
+      "required": [
+        "depositBps",
+        "withdrawBps"
+      ],
+      "properties": {
+        "depositBps": {
+          "$ref": "#/components/schemas/BigInt"
+        },
+        "withdrawBps": {
+          "$ref": "#/components/schemas/BigInt"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "version": "openapi3"
+}

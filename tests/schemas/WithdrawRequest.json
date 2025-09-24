@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "required": [
+    "positionId",
+    "senderAddress",
+    "percentage",
+    "mode"
+  ],
+  "properties": {
+    "positionId": {
+      "type": "string",
+      "description": "Position identifier to withdraw from"
+    },
+    "senderAddress": {
+      "type": "string",
+      "description": "Sender's wallet address"
+    },
+    "percentage": {
+      "type": "number",
+      "description": "Percentage of position to withdraw (0-1)",
+      "title": "lessThanOrEqualTo(1)",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "as-is",
+        "usdc"
+      ],
+      "description": "Whether the user wants to withdraw in the same coin or in USDC"
+    }
+  },
+  "additionalProperties": false,
+  "version": "openapi3"
+}

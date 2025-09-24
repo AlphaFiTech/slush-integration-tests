@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Test Suite 1",
+    "description": "",
+    "testCaseIds": []
+  },
+  {
+    "name": "strategies",
+    "description": "AlphaLend markets exposed as investment strategies",
+    "testCaseIds": [
+      "list_all_strategies_594729183",
+      "get_strategy_details_85337871"
+    ]
+  },
+  {
+    "name": "positions",
+    "description": "User positions derived from AlphaLend",
+    "testCaseIds": [
+      "list_user_positions_309882135",
+      "get_position_details_843779028",
+      "list_user_positions_594575291"
+    ]
+  },
+  {
+    "name": "transactions",
+    "description": "Transaction builders returning serialized bytes for Sui",
+    "testCaseIds": [
+      "create_deposit_transaction_330434771",
+      "create_deposit_transaction_15260973",
+      "create_withdrawal_transaction_836512131",
+      "create_withdrawal_transaction_644326287",
+      "withdraw_100_293264058"
+    ]
+  }
+]

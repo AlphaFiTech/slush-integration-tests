@@ -1,0 +1,73 @@
+{
+  "details": {
+    "summary": "Get position details",
+    "operationId": "positions.getPosition",
+    "tags": [
+      "positions"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      },
+      {
+        "source": "textBody",
+        "property": null,
+        "operator": "Default Validator",
+        "expectedValue": ""
+      }
+    ],
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/components/schemas/GetPositionResponse"
+      },
+      "type": "json"
+    },
+    "expectedBody": {
+      "content": {
+        "position": {
+          "id": "0x14e4a52cc36e996d820aa17be3c41f9cbbe2540df46bc1675b607c4481aab0b6",
+          "strategyId": "0x3d596de95ed3afe5a4acdb6058cf8ec48ac3ca07afc44c1dc1bf19fad5f85368",
+          "type": "PositionV1",
+          "principal": [
+            {
+              "coinType": "0x2::sui::SUI",
+              "amount": "1000000"
+            }
+          ],
+          "pendingRewards": [
+            {
+              "coinType": "0x2::sui::SUI",
+              "amount": "0"
+            }
+          ],
+          "url": "url"
+        }
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "https://api-staging.alphalend.xyz/slush/v1/positions/0x14e4a52cc36e996d820aa17be3c41f9cbbe2540df46bc1675b607c4481aab0b6",
+    "method": "GET",
+    "queryParams": [
+      {
+        "name": "positionid",
+        "value": "0x14e4a52cc36e996d820aa17be3c41f9cbbe2540df46bc1675b607c4481aab0b6"
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "positionid",
+      "path": "0x14e4a52cc36e996d820aa17be3c41f9cbbe2540df46bc1675b607c4481aab0b6"
+    }
+  ]
+}

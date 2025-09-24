@@ -1,0 +1,44 @@
+{
+  "details": {
+    "summary": "Create withdrawal transaction",
+    "operationId": "transactions.createWithdraw",
+    "tags": [
+      "transactions"
+    ]
+  },
+  "validation": {
+    "assertions": [
+      {
+        "source": "statusCode",
+        "operator": "equalToNumber",
+        "expectedValue": "200"
+      },
+      {
+        "source": "textBody",
+        "operator": "Default Schema Validator"
+      }
+    ],
+    "expectedSchema": {
+      "content": {
+        "$ref": "#/components/schemas/WithdrawResponse"
+      },
+      "type": "json"
+    }
+  },
+  "request": {
+    "url": "https://api-staging.alphalend.xyz/slush/v1/withdraw",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "content": {
+        "positionId": "0x14e4a52cc36e996d820aa17be3c41f9cbbe2540df46bc1675b607c4481aab0b6",
+        "senderAddress": "0xa511088cc13a632a5e8f9937028a77ae271832465e067360dd13f548fe934d1a",
+        "percentage": 0.5,
+        "mode": "as-is"
+      },
+      "type": "json"
+    }
+  }
+}

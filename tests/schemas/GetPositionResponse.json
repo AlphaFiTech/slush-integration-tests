@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "required": [
+    "position"
+  ],
+  "properties": {
+    "position": {
+      "$ref": "#/components/schemas/Position"
+    }
+  },
+  "additionalProperties": false,
+  "version": "openapi3"
+}

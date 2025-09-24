@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": [
+    "_tag"
+  ],
+  "properties": {
+    "message": {
+      "type": "string",
+      "description": "Human-readable error message"
+    },
+    "_tag": {
+      "type": "string",
+      "enum": [
+        "TransactionBuildError"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "description": "Error that occurred during transaction building",
+  "version": "openapi3"
+}
